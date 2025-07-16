@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans:
@@ -42,13 +39,4 @@
   --dark-grey: oklch(0.5927 0.0136 285.98);
   --grey: oklch(0.9228 0.004 286.32);
   --light-grey: oklch(0.9824 0.0013 286.38);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
