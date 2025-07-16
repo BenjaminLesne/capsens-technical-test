@@ -1,6 +1,54 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@theme inline {
+  --radius-lg: var(--radius);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-dark-grey: var(--dark-grey);
+  --color-grey: var(--grey);
+  --color-light-grey: var(--light-grey);
+  --color-primary-blue: var(--primary-blue);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-tertiary-blue: var(--tertiary-blue);
+
+  --color-border: var(--grey);
+  --color-radio-border-active: var(--primary-blue);
+
+  --color-radio-background: var(--white);
+  --color-radio-background-active: var(--tertiary-blue);
+  --color-radio-background-hovered: var(--grey);
+
+  --color-button: var(--primary-blue);
+  --color-button-hovered: var(--dark-grey);
+  --color-button-disabled: var(--black);
+}
+
+:root {
+  --radius: 0.5rem;
+  --primary-blue: oklch(0.4212 0.1197 252.44);
+  --secondary-blue: oklch(0.7495 0.1262 205.36);
+  --tertiary-blue: oklch(0.9625 0.0344 203.29);
+  --black: oklch(0.2375 0.04 282.93);
+  --white: oklch(1 0 0);
+  --dark-grey: oklch(0.5927 0.0136 285.98);
+  --grey: oklch(0.9228 0.004 286.32);
+  --light-grey: oklch(0.9824 0.0013 286.38);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
