@@ -2,12 +2,12 @@
 
 @theme {
   --font-sans:
-    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @theme inline {
-  --radius-lg: var(--radius);
+  --radius: var(--radius);
   --color-black: var(--black);
   --color-white: var(--white);
   --color-dark-grey: var(--dark-grey);
@@ -22,11 +22,12 @@
 
   --color-radio-background: var(--white);
   --color-radio-background-active: var(--tertiary-blue);
-  --color-radio-background-hovered: var(--grey);
+  --color-radio-background-hovered: var(--light-grey);
 
   --color-button: var(--primary-blue);
   --color-button-hovered: var(--dark-grey);
   --color-button-disabled: var(--black);
+  --default-font-family: "Montserrat", sans-serif;
 }
 
 :root {

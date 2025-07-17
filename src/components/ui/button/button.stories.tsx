@@ -18,10 +18,12 @@ export const Default: Story = {
     children: (
       <>
         <span>Suivant</span>{" "}
-        <span><Image src={arrowUrl as string} alt="Flèche sur la droite" /></span>
+        <span>
+          <Image src={arrowUrl as string} alt="Flèche sur la droite" />
+        </span>
       </>
     ),
-    onClick: () => null
+    onClick: () => null,
   },
 };
 
