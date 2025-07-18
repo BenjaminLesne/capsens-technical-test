@@ -1,4 +1,7 @@
-import Image from "next/image";
+import { WaveIcon } from "../icons/wave-icon";
+import { DiamondIcon } from "../icons/diamond-icon";
+import { UserIcon } from "../icons/user-icon";
+import { CapsensIcon } from "../icons/capsens-icon";
 type DefaultLayoutProps = { children: React.ReactNode };
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
@@ -6,21 +9,14 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
     <>
       <header className="border-grey border-b p-6">
         <div className="max-w-8xl mx-auto flex flex-col items-center justify-between gap-5 sm:h-12 sm:flex-row">
-          <Image
-            src="/icons/capsens.svg"
-            width={167}
-            height={32.22}
-            alt="logo capsens"
-          />
+          <div className="flex items-center">
+            <CapsensIcon className="h-[34px] w-[167px]" />
+          </div>
           <div className="flex items-center">
             <div className="flex gap-4">
-              <Image
-                src="/icons/user.svg"
-                alt="icône utilisateur"
-                width={30}
-                height={30.14}
-              />
-
+              <div className="flex items-center">
+                <UserIcon className="size-[31px]" />
+              </div>
               <div className="flex flex-col justify-center">
                 <span className="align-middle font-medium text-black">
                   Jean Dupont
@@ -34,7 +30,11 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         </div>
       </header>
       {children}
-      <footer>my footer</footer>
+      <footer>
+        <DiamondIcon />
+        <WaveIcon />
+        <DiamondIcon />
+      </footer>
     </>
   );
 }

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 
 import { Button } from "./button";
-import Image from "next/image";
-import arrowUrl from "../../../../public/icons/arrow.svg";
+import { RightArrowIcon } from "@/components/icons/right-arrow-icon";
 
 const meta = {
   component: Button,
@@ -19,7 +18,7 @@ export const Default: Story = {
       <>
         <span>Suivant</span>{" "}
         <span>
-          <Image src={arrowUrl as string} alt="Flèche sur la droite" />
+          <RightArrowIcon className="w-5" />
         </span>
       </>
     ),
