@@ -15,7 +15,7 @@ export const RightArrowIcon = ({ className }: Props) => {
     >
       <path
         d="M0 7H19.5M19.5 7L13.5 1M19.5 7L13.5 13"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         className="stroke-white"
       />
     </svg>

@@ -1,7 +1,8 @@
 import { WaveIcon } from "../icons/wave-icon";
-import { DiamondIcon } from "../icons/diamond-icon";
+import { BigDiamondIcon } from "../icons/big-diamond-icon";
 import { UserIcon } from "../icons/user-icon";
 import { CapsensIcon } from "../icons/capsens-icon";
+import { SmallDiamondIcon } from "../icons/small-diamond-icon";
 type DefaultLayoutProps = { children: React.ReactNode };
 
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
@@ -30,10 +31,13 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         </div>
       </header>
       {children}
-      <footer>
-        <DiamondIcon />
-        <WaveIcon />
-        <DiamondIcon />
+      <div className="mt-[59px]"></div>
+      <footer className="relative mt-auto flex flex-col">
+        <div className="max-w-8xl relative mx-auto w-full">
+          <BigDiamondIcon className="absolute -top-[32px] left-[7px] z-20 w-1/4 max-w-[138px]" />
+          <SmallDiamondIcon className="absolute -top-[59px] right-4 z-0 w-1/4 max-w-[90px]" />
+        </div>
+        <WaveIcon className="z-10 w-full" />
       </footer>
     </>
   );
