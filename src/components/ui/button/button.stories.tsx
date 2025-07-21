@@ -16,7 +16,7 @@ export const Default: Story = {
     disabled: false,
     children: (
       <>
-        <span>Suivant</span>{" "}
+        <span>Suivant</span>
         <span>
           <RightArrowIcon className="w-5" />
         </span>
