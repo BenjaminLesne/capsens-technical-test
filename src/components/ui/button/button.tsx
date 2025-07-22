@@ -10,7 +10,7 @@ const buttonVariants = cva(
 
     "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-transform [&_svg]:duration-300 [&_svg]:ease-in-out hover:[&_svg]:translate-x-2",
 
-    "disabled:bg-button-disabled disabled:pointer-events-none disabled:cursor-not-allowed",
+    "disabled:bg-button-disabled disabled:pointer-events-none",
   ],
   {
     variants: {

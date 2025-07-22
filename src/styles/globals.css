@@ -25,8 +25,8 @@
   --color-radio-background-hovered: var(--light-grey);
 
   --color-button: var(--primary-blue);
-  --color-button-hovered: var(--dark-grey);
-  --color-button-disabled: var(--black);
+  --color-button-hovered: var(--black);
+  --color-button-disabled: var(--dark-grey);
   --default-font-family: "Montserrat", sans-serif;
 
   --container-8xl: 1440px;
