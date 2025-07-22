@@ -1,29 +1,41 @@
-# Create T3 App
+- [Live web app](https://capsens-technical-test.vercel.app/)
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+# Getting Started
 
-## What's next? How do I make an app with this?
+## Requirements
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- Node.js 18.18 or later
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Installation
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+```bash
+pnpm install
+```
 
-## Learn More
+## Start the App
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+# Architecture
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+The [T3 Stack](https://create.t3.gg/) was used for this test.
 
-## How do I deploy this?
+The structure follows the [Bulletproof React architecture](https://github.com/alan2207/bulletproof-react/tree/master), especially the [Next.js example](https://github.com/alan2207/bulletproof-react/blob/master/apps/nextjs-app/README.md).
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+# Design System
+
+## Start Storybook
+
+```bash
+pnpm run storybook
+```
+
+# Disclaimers
+
+## Pixel-Perfect Design
+
+Figma uses a different rendering engine than browsers, so fonts and layout may differ slightly from the mockup. Your OS, browser, and display can also affect colors, contrast, and rendering.
+
+As a result, the final site may not appear pixel-perfect on every setup.
