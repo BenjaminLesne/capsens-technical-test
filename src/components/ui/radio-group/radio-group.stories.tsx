@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { RadioGroup, RadioGroupItem } from "./radio-group";
-import { Label } from "../label";
-import { LegalEntityIcon } from "@/features/account-creation/components/icons/legal-entity";
+import { RadioGroup } from "./radio-group";
 import { NaturalPersonIcon } from "@/features/account-creation/components/icons/natural-person";
+import { RadioItemLegalEntity } from "./radio-item-legal-entity";
 
 const data = [
   {
@@ -12,8 +11,8 @@ const data = [
   },
   { value: "Entreprise", title: "Entreprise", description: "Personne morale" },
   {
-    value: "Micro entreprise",
-    title: "Micro entreprise",
+    value: "Micro Entreprise",
+    title: "Micro Entreprise",
     description: "Personne morale",
   },
 ];
@@ -26,56 +25,37 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const PhysicalPersonEntity: Story = {
   args: {
     children: (
       <div className="flex gap-5">
         {data.map((item) => (
-          <RadioGroupItem
-            key={item.value}
+          <RadioItemLegalEntity
+            Icon={NaturalPersonIcon}
+            description={item.description}
+            title={item.title}
             value={item.value}
-            id={item.value}
-            className="flex-1 gap-12"
-          >
-            <div className="flex gap-6">
-              <NaturalPersonIcon className="fill-dark-grey" />
-              <Label
-                htmlFor={item.value}
-                className="flex cursor-pointer flex-col items-start"
-              >
-                <span className="font-semibold text-black">{item.title}</span>
-                <span className="text-black">{item.description}</span>
-              </Label>
-            </div>
-          </RadioGroupItem>
+            key={item.value}
+          />
         ))}
       </div>
     ),
   },
 };
 
-export const LegalEntity: Story = {
+export const CompanyEntity: Story = {
   args: {
     children: (
       <div className="flex gap-5">
         {data.map((item) => (
-          <RadioGroupItem
-            key={item.value}
+          <RadioItemLegalEntity
+            Icon={NaturalPersonIcon}
+            description={item.description}
+            title={item.title}
             value={item.value}
-            id={item.value}
-            className="flex-1 flex-col gap-6"
-          >
-            <div className="flex flex-col items-center gap-3">
-              <LegalEntityIcon className="fill-dark-grey" />
-              <Label
-                htmlFor={item.value}
-                className="flex cursor-pointer flex-col items-center"
-              >
-                <span className="font-semibold text-black">{item.title}</span>
-                <span className="text-black">{item.description}</span>
-              </Label>
-            </div>
-          </RadioGroupItem>
+            key={item.value}
+            variant="vertical"
+          />
         ))}
       </div>
     ),

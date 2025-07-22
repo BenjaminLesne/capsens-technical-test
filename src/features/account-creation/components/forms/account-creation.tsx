@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { Fragment, useActionState } from "react";
 import { initialFormState } from "@tanstack/react-form/nextjs";
 import { mergeForm, useForm, useTransform } from "@tanstack/react-form";
 import { accountCreationFormOptions } from "../../lib/form-options";
@@ -8,15 +8,12 @@ import { createUserAction } from "../../server/actions";
 import { UserTypeSchema } from "../../lib/schemas";
 import { Button } from "@/components/ui/button/button";
 import { RightArrowIcon } from "@/components/icons/right-arrow-icon";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "@/components/ui/radio-group/radio-group";
+import { RadioGroup } from "@/components/ui/radio-group/radio-group";
 import { NaturalPersonIcon } from "../icons/natural-person";
-import { Label } from "@/components/ui/label";
 import { LegalEntityIcon } from "../icons/legal-entity";
 import type z from "zod";
 import { Separator } from "@/components/ui/separator";
+import { RadioItemLegalEntity } from "@/components/ui/radio-group/radio-item-legal-entity";
 
 type Item = {
   value: z.infer<typeof UserTypeSchema>;
@@ -30,7 +27,7 @@ const data: Data = {
     {
       value: "Natural person",
       title: "Personne physique",
-      description: "Personne physique",
+      description: "Vous créez ce compte pour vous-même en tant qu’individu",
     } as const,
   ],
   enterprise: [
@@ -46,7 +43,7 @@ const data: Data = {
     } as const,
     {
       value: "Micro-enterprise",
-      title: "Micro entreprise",
+      title: "Micro Entreprise",
       description: "Personne morale",
     } as const,
   ],
@@ -91,28 +88,25 @@ export const AccountCreationForm = () => {
               >
                 <div>
                   {data.naturalPerson.map((item) => (
-                    <div key={item.value} className="flex">
-                      <RadioGroupItem
-                        value={item.value}
-                        id={item.value}
-                        className="flex-1 gap-12"
-                      >
-                        <div className="flex gap-6">
-                          <NaturalPersonIcon className="fill-dark-grey" />
-                          <Label
-                            htmlFor={item.value}
-                            className="flex cursor-pointer flex-col items-start"
-                          >
-                            <span className="font-semibold text-black">
-                              {item.title}
-                            </span>
-                            <span className="text-black">
-                              {item.description}
-                            </span>
-                          </Label>
-                        </div>
-                      </RadioGroupItem>
-                    </div>
+                    <Fragment key={item.value}>
+                      <div className="hidden sm:flex">
+                        <RadioItemLegalEntity
+                          Icon={NaturalPersonIcon}
+                          description={item.description}
+                          value={item.value}
+                          title={item.title}
+                        />
+                      </div>
+                      <div className="flex sm:hidden">
+                        <RadioItemLegalEntity
+                          Icon={NaturalPersonIcon}
+                          description={item.description}
+                          value={item.value}
+                          title={item.title}
+                          variant="vertical"
+                        />
+                      </div>
+                    </Fragment>
                   ))}
                 </div>
                 <div className="relative flex h-6 items-center">
@@ -121,29 +115,16 @@ export const AccountCreationForm = () => {
                     ou
                   </span>
                 </div>
-                <div className="flex flex-row gap-5">
+                <div className="flex flex-row flex-wrap gap-5">
                   {data.enterprise.map((item) => (
                     <div key={item.value} className="flex flex-1">
-                      <RadioGroupItem
+                      <RadioItemLegalEntity
+                        Icon={LegalEntityIcon}
+                        description={item.description}
                         value={item.value}
-                        id={item.value}
-                        className="flex-1 flex-col gap-6"
-                      >
-                        <div className="flex flex-col items-center gap-3">
-                          <LegalEntityIcon className="fill-dark-grey" />
-                          <Label
-                            htmlFor={item.value}
-                            className="flex cursor-pointer flex-col items-center"
-                          >
-                            <span className="font-semibold text-black">
-                              {item.title}
-                            </span>
-                            <span className="text-black">
-                              {item.description}
-                            </span>
-                          </Label>
-                        </div>
-                      </RadioGroupItem>
+                        title={item.title}
+                        variant="vertical"
+                      />
                     </div>
                   ))}
                 </div>

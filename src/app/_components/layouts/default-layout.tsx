@@ -8,7 +8,7 @@ type DefaultLayoutProps = { children: React.ReactNode };
 export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <>
-      <header className="border-grey border-b p-6">
+      <header className="border-grey border-b bg-white p-6">
         <div className="max-w-8xl mx-auto flex flex-col items-center justify-between gap-5 sm:h-12 sm:flex-row">
           <div className="flex items-center">
             <CapsensIcon className="h-[34px] w-[167px]" />
@@ -31,11 +31,11 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         </div>
       </header>
       {children}
-      <div className="mt-[59px]"></div>
+      <div className="mt-[67px]"></div>
       <footer className="relative mt-auto flex flex-col">
         <div className="max-w-8xl relative mx-auto w-full">
-          <BigDiamondIcon className="absolute -top-[32px] left-[7px] z-20 w-1/4 max-w-[138px]" />
-          <SmallDiamondIcon className="absolute -top-[59px] right-4 z-0 w-1/4 max-w-[90px]" />
+          <BigDiamondIcon className="absolute -top-[32px] left-[9px] z-20 w-1/4 max-w-[138px]" />
+          <SmallDiamondIcon className="absolute -top-[59px] right-3.5 z-0 w-1/4 max-w-[90px]" />
         </div>
         <WaveIcon className="z-10 w-full" />
       </footer>

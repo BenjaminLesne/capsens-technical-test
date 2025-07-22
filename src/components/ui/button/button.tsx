@@ -5,7 +5,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:bg-button-disabled [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive cursor-pointer hover:[&_svg]:translate-x-2 [&_svg]:transition-transform [&_svg]:duration-300 [&_svg]:ease-in-out",
+  [
+    "focus-visible:ring-ring/50 focus-visible:border-ring aria-invalid:ring-destructive/20 aria-invalid:border-destructive inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px]",
+
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:transition-transform [&_svg]:duration-300 [&_svg]:ease-in-out hover:[&_svg]:translate-x-2",
+
+    "disabled:bg-button-disabled disabled:pointer-events-none disabled:cursor-not-allowed",
+  ],
   {
     variants: {
       variant: {
@@ -13,7 +19,7 @@ const buttonVariants = cva(
           "bg-primary-blue hover:bg-button-hovered text-white flex gap-4 font-semibold",
       },
       size: {
-        default: "h-9 px-16 py-4 w-[226.5px] h-14 text-md",
+        default: "px-16 py-4 w-[226.5px] h-14 text-md",
       },
     },
     defaultVariants: {

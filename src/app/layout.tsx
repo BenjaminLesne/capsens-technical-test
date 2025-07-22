@@ -20,7 +20,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={montserrat.className}>
-      <body className="flex min-h-screen flex-col">
+      <body className="bg-light-grey flex min-h-screen flex-col">
         <DefaultLayout>{children}</DefaultLayout>
       </body>
     </html>
