@@ -95,6 +95,11 @@ export const AccountCreationForm = () => {
                           description={item.description}
                           value={item.value}
                           title={item.title}
+                          state={
+                            form.getFieldValue("userType") === item.value
+                              ? "checked"
+                              : "unchecked"
+                          }
                         />
                       </div>
                       <div className="flex sm:hidden">
@@ -104,6 +109,11 @@ export const AccountCreationForm = () => {
                           value={item.value}
                           title={item.title}
                           variant="vertical"
+                          state={
+                            form.getFieldValue("userType") === item.value
+                              ? "checked"
+                              : "unchecked"
+                          }
                         />
                       </div>
                     </Fragment>
@@ -124,6 +134,11 @@ export const AccountCreationForm = () => {
                         value={item.value}
                         title={item.title}
                         variant="vertical"
+                        state={
+                          form.getFieldValue("userType") === item.value
+                            ? "checked"
+                            : "unchecked"
+                        }
                       />
                     </div>
                   ))}

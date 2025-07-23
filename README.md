@@ -9,6 +9,10 @@
 ## Installation
 
 ```bash
+git clone https://github.com/BenjaminLesne/capsens-technical-test.git
+```
+
+```bash
 pnpm install
 ```
 
